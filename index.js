@@ -25,6 +25,8 @@ if(process.env.NODE_ENV === 'production') {
    });
 
 }
+const port = process.env.PORT || 5000;
+app.listen(port);
 
 app.use(bodyParser.json());
 
@@ -46,5 +48,3 @@ require('./routes/billingRoutes')(app);
 
 mongoose.connect(keys.mongoURI);
 
-const port = process.env.PORT || 5000;
-app.listen(port);
