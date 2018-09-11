@@ -10,10 +10,6 @@ require('./models/Survey');
 require('./services/passport');
 
 
-
-
-
-
 const app = express();
 //some cookie middleware
 
@@ -27,7 +23,7 @@ if(process.env.NODE_ENV === 'production') {
    //Express will serve up our index.html if it doesnt recognize the route thats being requested
    const path = require('path');
    app.get('*', (req, res) => {
-      res.sendfile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
    });
 
 }
