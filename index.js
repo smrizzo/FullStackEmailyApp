@@ -16,7 +16,7 @@ require('./services/passport');
 
 const app = express();
 //some cookie middleware
-mongoose.connect(keys.mongoURI);
+
 
 if(process.env.NODE_ENV === 'production') {
    //Express will serve up production issues
@@ -50,6 +50,8 @@ authRoutes(app);
 //could use equire('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/surveyRoutes')(app);
+
+mongoose.connect(keys.mongoURI);
 
 
 
