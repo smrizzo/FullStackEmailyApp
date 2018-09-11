@@ -9,6 +9,8 @@ require('./models/user');
 require('./models/Survey');
 require('./services/passport');
 
+mongoose.connect(keys.mongoURI);
+
 
 const app = express();
 //some cookie middleware
@@ -44,8 +46,9 @@ app.use(passport.session());
 authRoutes(app);
 //could use equire('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 
 
-mongoose.connect(keys.mongoURI);
+
 
