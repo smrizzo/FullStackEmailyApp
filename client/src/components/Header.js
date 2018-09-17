@@ -13,7 +13,6 @@ class Header extends Component {
                <li><a href="/auth/google">Login with Google</a></li>
             );
          default:
-            console.log("Got in default");
             return [
                <li key="1"><Payments /></li>,
                <li key="2" style={{ margin: '0 10px' }} >
